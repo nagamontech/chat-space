@@ -26,34 +26,42 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
+|name|string|null: false|
+|email|string|null: false|
 |password|string|null: false|
-|group_id|integer|
 
 #### Association
 - has_many: groups, through: groups_users
-- has_many: posts
+has_many: posts, through: users_posts
 
 ### postsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|integer|
+|image|text|null: false|
+
 
 #### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+has_many: users, through: users_posts
+
+
+### users_postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+|post_id|integer|foreign_key: true|
+
+#### Association
+- belongs_to :user
+- belongs_to :post
 
 ### groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
-|password|string|null: false|
-|user_id|integer|
+|name|string|null: false|
 
 #### Association
 - has_many: users, through: groups_users
@@ -62,9 +70,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|
-|user_id|integer|
+|group_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
 
 #### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
