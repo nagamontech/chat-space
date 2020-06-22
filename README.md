@@ -31,31 +31,22 @@ Things you may want to cover:
 |password|string|null: false|
 
 #### Association
-- has_many: groups, through: groups_users
-has_many: posts, through: users_posts
+- has_many: posts
 
 ### postsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|image|text|null: false|
+|image|string|
+|user_id|integer|foreign_key: true|
+|post_id|integer|foreign_key: true|
 
 
 #### Association
 - belongs_to :group
-has_many: users, through: users_posts
-
-
-### users_postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|foreign_key: true|
-|post_id|integer|foreign_key: true|
-
-#### Association
 - belongs_to :user
-- belongs_to :post
+
 
 ### groupsテーブル
 
@@ -64,7 +55,7 @@ has_many: users, through: users_posts
 |name|string|null: false|
 
 #### Association
-- has_many: users, through: groups_users
+- has_many: users
 
 ### groups_usersテーブル
 
