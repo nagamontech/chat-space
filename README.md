@@ -37,7 +37,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
+|message|text|
 |image|string|
 |user_id|integer|foreign_key: true|
 |post_id|integer|foreign_key: true|
