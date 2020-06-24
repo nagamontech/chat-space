@@ -1,1 +1,43 @@
-＜チャット画面＞
+.chat-main
+  .main-head
+    .main-head__group
+      .main-head__group-name
+        test
+      %ul.main-head__member-list
+        Member：
+        %li.main-head__member
+          masa
+    = link_to '#',class: "main-head__edit-btn" do
+      Edit
+
+  .main-message
+    .main-message__box
+      .message-info
+        .message-info__name masa
+        .message-info__date 2020/6/23(tue) 18:10
+      .message
+        .message-info__message-text おはよう
+
+    .main-message__box
+      .message-info
+        .message-info__name masa
+        .message-info__date 2020/6/23(tue) 18:10
+      .message
+        .message-info__message-text こんにちは
+
+    .main-message__box
+      .message-info
+        .message-info__name masa
+        .message-info__date 2020/6/23(tue) 18:10
+      .message
+        .message-info__message-text こんばんは
+
+
+  .form
+    %form.form-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          =icon("fas", "image")
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
