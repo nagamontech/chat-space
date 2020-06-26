@@ -7,7 +7,8 @@
         Member：
         %li.main-head__member
           masa
-    = link_to '#',class: "main-head__edit-btn" do
+    = link_to edit_group_path(@group) do
+      .main-head__edit-btn
       Edit
 
   .main-message

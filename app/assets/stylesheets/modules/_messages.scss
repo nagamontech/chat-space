@@ -14,56 +14,58 @@
   width: 300px;
 }
 
-.side-head {
-  background-color: #253141;
-  height: 100px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  &__top{
-    width: 260px;
-    height: 20px;
+  .side-head {
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-  }
-  &__user-name {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  &__icon-list {
-    display: flex;
-    justify-content: end;
-  }
-  &__icon {
-    margin-left: 5px;
-    a {
-      color: #fff;
+    align-items: center;
+    &__top{
+      width: 260px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__user-name {
       font-size: 16px;
+      font-weight: bold;
+    }
+    &__icon-list {
+      display: flex;
+      justify-content: end;
+    }
+    &__icon {
+      margin-left: 5px;
+      a {
+        color: #fff;
+        font-size: 16px;
+      }
     }
   }
-}
 
-.side-group {
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  display: flex;
-  justify-content: center;
-  &__box {
-    width: 260px;
+  .side-group {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    overflow: scroll;
   }
-  &__group-name {
-    font-size: 15px;
-    margin: 20px 0 5px 0;
-    font-weight: bold;
-    color: #fff;
+
+  .group {
+    box-sizing: border-box;
+    padding: 20px 0 40px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    &__name {
+      font-size: 15px;
+    }
+    &__message {
+      font-size: 11px;
+      margin-top: 5px;
+    }
   }
-  &__group-message {
-    font-size: 11px;
-    margin-bottom: 40px;
-    font-weight: bold;
-    color: #fff;
-  }
-}
 
 // 右側
 
