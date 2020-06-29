@@ -103,6 +103,9 @@
     color: #38AEF0;
     height: 40px;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 
@@ -111,38 +114,41 @@
   height: calc(100vh - 190px);
   padding: 0 40px;
 }
-
-.message-info {
-  display: flex;
-  padding: 35px 0 12px;
-  &__name {
-    color: #333333;
-    font-size: 16px;
-    margin-right: 5px;
+  .message-box {
+    margin-bottom: 46px;
   }
-  &__date {
-    color: #999999;
-    font-size: 12px;
-  }
-}
 
-.message {
-  color: #434a54;
-  font-size: 14px;
-  margin-bottom: 46px;
-}
+    .message-info {
+      display: flex;
+      padding: 35px 0 12px;
+      &__name {
+        color: #333333;
+        font-size: 16px;
+        margin-right: 5px;
+      }
+      &__date {
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+
+    .Message {
+      color: #434a54;
+      font-size: 14px;
+      margin-bottom: 46px;
+    }
 
 // フォーム
 
-.form {
+.form1 {
   height: 90px;
   background-color: #d2d2d2;
   padding: 20px 40px;
 }
 
-.form-content {
+.form {
   display: flex;
-  .input-box {
+  .form-content {
     display: flex;
     position: relative;
     width: 100%;
@@ -162,7 +168,7 @@
       }
     }
   }
-
+  
   .submit-btn {
     width: 100px;
     height: 50px;

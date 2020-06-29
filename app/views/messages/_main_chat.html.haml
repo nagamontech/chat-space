@@ -2,43 +2,24 @@
   .main-head
     .main-head__group
       .main-head__group-name
-        test
+        =@group.name
       %ul.main-head__member-list
-        Member：
+        member:
         %li.main-head__member
-          masa
+        -@group.users.each do |group|
+          =group.name
+        
     = link_to edit_group_path(@group) do
-      .main-head__edit-btn
-      Edit
+      .main-head__edit-btn Edit
 
   .main-message
-    .main-message__box
-      .message-info
-        .message-info__name masa
-        .message-info__date 2020/6/23(tue) 18:10
-      .message
-        .message-info__message-text おはよう
+    = render @messages
 
-    .main-message__box
-      .message-info
-        .message-info__name masa
-        .message-info__date 2020/6/23(tue) 18:10
-      .message
-        .message-info__message-text こんにちは
-
-    .main-message__box
-      .message-info
-        .message-info__name masa
-        .message-info__date 2020/6/23(tue) 18:10
-      .message
-        .message-info__message-text こんばんは
-
-
-  .form
-    %form.form-content
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          =icon("fas", "image")
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn", value: "Send"}
+  .form1
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
+      .form-content
+        = f.text_field :content, class: 'form-content__text', placeholder: 'type a message'
+        = f.label :image, class: 'form-content__image' do
+          = icon('far', 'image', class: 'form-content__icon')
+          = f.file_field :image, class: 'form-content__image__file'
+      = f.submit 'Send', class: 'submit-btn'
