@@ -22,9 +22,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-*.public
-# /public/packs
-# /public/packs-test
+public/
+# /plublic/packs
+# /pubic/packs-test
 /node_modules
 /yarn-error.log
 yarn-debug.log*
