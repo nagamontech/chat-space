@@ -57,11 +57,11 @@ $(function(){
       $('.main-message').append(html);
       $('form')[0].reset();
       $('.main-message').animate({ scrollTop: $('.main-message')[0].scrollHeight});
-      $('.form').prop("disabled", false);
+      $('.submit-btn').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-      $('.form').prop("disabled", false);
+      $('.submit-btn').prop("disabled", false);
     });
   });
 });
