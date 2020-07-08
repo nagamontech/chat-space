@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
-  def create
+ 
     def create
       @message = @group.messages.new(message_params)
       if @message.save
@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
         render :index
       end
     end
-  end
+  
 
   private
 
