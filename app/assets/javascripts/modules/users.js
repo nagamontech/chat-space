@@ -1,7 +1,11 @@
 $(function() {
   function addUser(user) {
     let html = `
+<<<<<<< Updated upstream
                 <div class="ChatMember">
+=======
+                <div class="ChatMember clearfix">
+>>>>>>> Stashed changes
                   <p class="ChatMember__name">${user.name}</p>
                   <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>
@@ -11,13 +15,18 @@ $(function() {
 
   function addNoUser() {
     let html = `
+<<<<<<< Updated upstream
                 <div class="ChatMember">
+=======
+                <div class="ChatMember clearfix">
+>>>>>>> Stashed changes
                   <p class="ChatMember__name">ユーザーが見つかりません</p>
                 </div>
                 `;
     $("#UserSearchResult").append(html);
   }
 
+<<<<<<< Updated upstream
   function addMember(name, id) {
     let html = `
                 <div class="ChatMember">
@@ -29,6 +38,8 @@ $(function() {
     $(".ChatMembers").append(html);
   }
 
+=======
+>>>>>>> Stashed changes
   $("#UserSearch__field").on("keyup", function() {
     let input = $("#UserSearch__field").val();
     $.ajax({
@@ -53,6 +64,7 @@ $(function() {
       alert("通信エラーです。ユーザーが表示できません。");
     });
   });
+<<<<<<< Updated upstream
   $("#UserSearchResult").on("click", ".ChatMember__add", function() {
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
@@ -62,4 +74,6 @@ $(function() {
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();
   });
+=======
+>>>>>>> Stashed changes
 });

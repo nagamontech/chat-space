@@ -54,7 +54,10 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
+<<<<<<< Updated upstream
       console.log(data)
+=======
+>>>>>>> Stashed changes
       $('.main-message').append(html);
       $('form')[0].reset();
       $('.main-message').animate({ scrollTop: $('.main-message')[0].scrollHeight});
